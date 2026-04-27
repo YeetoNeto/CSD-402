@@ -1,12 +1,5 @@
-/*
-Noah McCarthy Module Assignment 6.2
-Make a class in Java and test it
-*/
-
-
-public class App {
-    public static class Fan{
-        //constants
+public class Fan{
+    //constants
         public static final int STOPPED = 0;
         public static final int SLOW = 1;
         public static final int MEDIUM = 2;
@@ -29,7 +22,7 @@ public class App {
             this.color = color.toLowerCase();
         }
 
-        private boolean on(){
+        public boolean on(){
             if (speedToString() == "STOPPED"){
                 return false;
             }
@@ -39,7 +32,7 @@ public class App {
         }
 
         public void setSpeed(int speedChange){
-            speed = speedChange;
+            this.speed = speedChange;
         }
 
         public int getSpeed() {
@@ -47,7 +40,7 @@ public class App {
         }
 
         public void setFanColor(String color){
-            color = color.toLowerCase();
+            this.color = color.toLowerCase();
         }
 
         public String getFanColor(){
@@ -55,14 +48,14 @@ public class App {
         }
 
         public void setRadius(double number){
-            radius = number;
+            this.radius = number;
         }
 
         public double getRadius(){
             return radius;
         }
 
-        private String speedToString(){
+        public String speedToString(){
             switch (speed) {
                 case SLOW:
                     return "SLOW";
@@ -85,32 +78,6 @@ public class App {
                 + "\nThe fan has a radius of " + radius + "\nThe fan has a color of " + color;
             }       
         }
-    }
-
-    public static void main(String[] args) throws Exception {
-        //Test No argument Fan
-        Fan Fan1 = new Fan();
-        System.out.println("Default Fan:");
-        System.out.println(Fan1);
-
-        //Test Fan getters
-        System.out.println("Testing Fan getters:");
-        System.out.println("Speed: " + Fan1.getSpeed());
-        System.out.println("Radius: " + Fan1.getRadius());
-        System.out.println("FanColor: " + Fan1.getFanColor());
-
-        //Test Argument Fan
-        Fan Fan2 = new Fan(1, 9, "Red");
-        System.out.println("Custom Fan:");
-        System.out.println(Fan2);
- 
-        //Test Modified Fan
-        Fan2.setSpeed(Fan.MEDIUM);
-        Fan2.setFanColor("red and black");
-        Fan2.setRadius(5.6);
-        System.out.println("Modified Custom Fan:");
-        System.out.println(Fan2);
-
-    }
-
 }
+
+
